@@ -7,11 +7,14 @@ app.use(cors());
 app.use(express.json());
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'postgres',
-    password: '1234',
+    user: 'neondb_owner',
+    host: 'ep-royal-pond-a1ci3td3-pooler.ap-southeast-1.aws.neon.tech',
+    database: 'neondb',
+    password: 'npg_fiIjUM48mHPJ',
     port: 5432,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 app.get('/version', async (req, res) => {
